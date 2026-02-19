@@ -56,4 +56,35 @@ public class CalculadoraTest {
         assertEquals(OperacionNoValidaException.MSG, ex.getMessage());
 
     }
+    @Test
+    @DisplayName("CP1 - POSITIVO / POSITIVO")
+    void dividirPositivoPositivo() throws OperacionNoValidaException {
+        assertEquals(2, Calculadora.dividir(8, 4));
+    }
+
+    @Test
+    @DisplayName("CP2 - POSITIVO / NEGATIVO")
+    void dividirPositivoNegativo() throws OperacionNoValidaException {
+        assertEquals(-2, Calculadora.dividir(8, -4));
+    }
+
+    @Test
+    @DisplayName("CP3 - NEGATIVO / POSITIVO")
+    void dividirNegativoPositivo() throws OperacionNoValidaException {
+        assertEquals(-2, Calculadora.dividir(-8, 4));
+    }
+
+    @Test
+    @DisplayName("CP4 - NEGATIVO / NEGATIVO")
+    void dividirNegativoNegativo() throws OperacionNoValidaException {
+        assertEquals(2, Calculadora.dividir(-8, -4));
+    }
+
+    @Test
+    @DisplayName("CP5 - 0 / POSITIVO")
+    void dividirCeroPositivo() throws OperacionNoValidaException {
+        assertEquals(0, Calculadora.dividir(0, 4));
+    }
+
+    
 }
